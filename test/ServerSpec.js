@@ -11,9 +11,9 @@ var Link = require('../app/models/link');
 // NOTE: these tests are designed for mongo!
 /////////////////////////////////////////////////////
 
-describe('', function() {
+xdescribe('', function() {
 
-  beforeEach(function(done) {
+  xbeforeEach(function(done) {
     // Log out currently signed in user
     request(app)
       .get('/logout')
@@ -90,7 +90,7 @@ describe('', function() {
 
     describe('With previously saved urls: ', function() {
 
-      beforeEach(function(done) {
+      xbeforeEach(function(done) {
         link = new Link({
           url: 'http://www.roflzoo.com/',
           title: "Funny animal pictures, funny animals, funniest dogs",
@@ -207,7 +207,7 @@ describe('', function() {
 
   describe('Account Login:', function(){
 
-    beforeEach(function(done) {
+    xbeforeEach(function(done) {
       new User({
           'username': 'Phillip',
           'password': 'Phillip'
