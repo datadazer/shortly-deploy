@@ -4,20 +4,23 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       build: {
-        src:[
+        files:{
+          'public/dist/vendors.js': [
               'public/lib/jquery.js',
               'public/lib/underscore.js',
               'public/lib/backbone.js',
-              'public/lib/handlebars.js',
+              'public/lib/handlebars.js'],
+
+          'public/dist/build.js': [
+        
               'public/client/app.js',
               'public/client/link.js',
               'public/client/links.js',
               'public/client/linkView.js',
               'public/client/linksView.js',
               'public/client/createLinkView.js',
-              'public/client/router.js'
-        ],
-        dest: 'public/dist/build.js'
+              'public/client/router.js']
+        }
       }
     },
 
@@ -38,8 +41,11 @@ module.exports = function(grunt) {
 
     uglify: {
       build: {
-        src: 'public/dist/build.js',
-        dest: 'public/dist/build.min.js'
+        files: {
+          'public/dist/build.min.js': 'public/dist/build.js',
+          'public/dist/vendors.min.js': 'public/dist/vendors.js'
+        }
+
       }
     },
 
